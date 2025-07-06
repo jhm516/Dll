@@ -1,23 +1,80 @@
-# MRON-Mod
-Resurgence Mini Royale Mod for CoD Warzone
-This modification allows you to play Battle Royale normally in Call of Duty: Modern Warfare 2019 (IW8m, 1.20)
-It includes:
-1. Configs
-2. Scripts
-3. Dll
+# DLL
+[![License](https://img.shields.io/gitlab/license/xifil/iw8-mod.svg)](https://gitlab.com/xifil/iw8-mod/-/blob/master/LICENSE)
+[![Open Issues](https://img.shields.io/gitlab/issues/open/xifil/iw8-mod.svg)](https://gitlab.com/xifil/iw8-mod/-/issues)
+[![Discord](https://img.shields.io/discord/769966964030046298?color=%237289DA&label=members&logo=discord&logoColor=%23FFFFFF)](https://discord.gg/dPzJajt)
 
-Scripts are used when you're hosting matches, so if you're just a player, not hoster, you can play without them. Same goes for scripts, but they also stand for visuals ingame. Dll is needed for visual features only.
+<p align="center">
+  <img src="assets/github/banner.png?raw=true" />
+</p>
 
-INSTALLATION 
+NOTE: You must legally own [Call of Duty®: Modern Warfare](https://store.steampowered.com/app/2000950/) to run this mod. Cracked/Pirated versions of the game are **NOT** supported.
 
-1. Download latest release .zip. Open it.
-2. Put all .cfg and .json files from Configs folder to /Documents/Call of Duty Modern Warfare/players/
-3. Put script.gscbin to your game folder and 1816.gscbin to your game folder/donetsk/scripts/
-4. Put discord_game_sdk.dll to your game folder with replacement.
-5. Done! Launch the game and press F1 to see menu.
+## Compile from source
 
-HOW TO USE
+- Clone the Git repo. Do NOT download it as ZIP, that won't work.
+  > You can run
+  > ```
+  > git clone https://github.com/xifil/iw8-mod.git --recurse-submodules
+  > ```
+  > or
+  > ```
+  > git clone https://gitlab.com/xifil/iw8-mod.git --recurse-submodules
+  > ```
+  > depending on what Git you would like to use, however you always need the `--recurse-submodules` flag.
+- Update the submodules and run `premake5 vs2022` or simply use the delivered `generate.bat`.
+- Build via solution file in `iw8_vs2022.sln`.
 
-To open menu, press F1. Main section is MiniRoyale. Click it. There you can choose Circle Preset (which stays for gas zone location), Execute br_core.cfg (which is VERY IMPORTANT before going in match) and Playlists themselves. IMPORTANT: If you're the hoster, you don't need to Execute br_core.cfg. Just select the playlist! It automatically executes br_core.cfg, so executing it again AFTER choosing playlist can override needed settings. Use Circle Preset 1 to debug bots. Current script version is buggy about bots, so crashes are expected. Remember that if you go too far from hoster (more than 500m), you will fall through map (no collisions). Also remember that if you set your FPS more than 84, your game will crash in no more than 5 minutes.
+<!--
+### Premake arguments
 
-The script is written with GSC which Call of Duty uses. script.gscbin stays for main Circles Module and can be up to 3 KB. 1816.gscbin stays for all other features and can be up to 47 KB.
+| Argument                    | Description                                    |
+|:----------------------------|:-----------------------------------------------|
+| `--copy-to=PATH`            | Optional, copy the EXE to a custom folder after build, define the path here if wanted. |
+| `--dev-build`               | Enable development builds of the client. |
+
+<br/>-->
+
+## Download from Actions
+
+GitHub Actions automatically builds the DLL file on each 
+commit, you can find the latest build of iw8-mod 
+[here](https://xifil.github.io/iw8-redirect).
+
+## Disclaimer
+
+This software has been created purely for the purposes of
+academic research. It is not intended to be used to attack
+other systems. Project maintainers are not responsible or
+liable for misuse of the software. Use responsibly.
+
+## Usage
+
+<!--iw8-mod is currently unusable on the newest version (v1.67)
+of Call of Duty®: Modern Warfare, you are required to have
+the Season 2 version (v1.20) with the left-over debug
+executable, `game_dx12_ship_replay.exe`. Once built, replace
+`discord_game_sdk.dll` in your game directory and run
+`game_dx12_ship_replay.exe`. Alternatively, you can build in
+`ReleaseShip` and launch `ModernWarfare.exe`.-->
+
+iw8-mod supports these versions of Modern Warfare:  
+- 1.20.4.7623265 (ModernWarfare & game_dx12_ship_replay) <!-- They're the same exact thing -->
+- 1.38.3.9489393
+- 1.44.0.10435696
+
+Support may be coming for:  
+- 0.01.2.7089334
+- 1.03.0.7209368
+
+Keep in mind that only 1.20/replay fully works "online" right now, all other versions don't get past the main menu and crash after ~2 minutes due to anti-tampering mechanisms put in place by Infinity Ward.
+
+The same `XInput9_1_0.dll` can be used for all the versions as it auto-detects the version based on the executable and calculates the signatures based on that.
+
+## Credits
+
+- [t6-mod](https://gitlab.com/xifil/t6-mod) - codebase
+- [Donetsk](https://github.com/ProjectDonetsk/Donetsk) - documented code used throughout the project
+- [mrondllsrc](https://github.com/Ma3axucTKa/mrondllsrc) - a few hooks and patches
+- [s1x-client](https://github.com/HeartbeatingForCenturies/s1x-client) - heavy inspiration
+- [Alesky.](https://discord.com/users/266189430446882816) - art inspiration, the goat
+- [N1gh7m4r3](https://discord.com/users/1279980341863514134) - logical ideas, provided many useful resources
