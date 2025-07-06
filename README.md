@@ -1,36 +1,6 @@
 # DLL
-[![Discord](https://img.shields.io/discord/769966964030046298?color=%237289DA&label=members&logo=discord&logoColor=%23FFFFFF)](https://discord.gg/jhm)
-
-<p align="center">
-  <img src="assets/github/banner.png?raw=true" />
-</p>
 
 NOTE: You must legally own [Call of Duty®: Modern Warfare](https://store.steampowered.com/app/2000950/) to run this mod. Cracked/Pirated versions of the game are **NOT** supported.
-
-## Compile from source
-
-- Clone the Git repo. Do NOT download it as ZIP, that won't work.
-  > You can run
-  > ```
-  > git clone https://github.com/xifil/iw8-mod.git --recurse-submodules
-  > ```
-  > or
-  > ```
-  > git clone https://gitlab.com/xifil/iw8-mod.git --recurse-submodules
-  > ```
-  > depending on what Git you would like to use, however you always need the `--recurse-submodules` flag.
-- Update the submodules and run `premake5 vs2022` or simply use the delivered `generate.bat`.
-- Build via solution file in `iw8_vs2022.sln`.
-
-<!--
-### Premake arguments
-
-| Argument                    | Description                                    |
-|:----------------------------|:-----------------------------------------------|
-| `--copy-to=PATH`            | Optional, copy the EXE to a custom folder after build, define the path here if wanted. |
-| `--dev-build`               | Enable development builds of the client. |
-
-<br/>-->
 
 ## Download from Actions
 
