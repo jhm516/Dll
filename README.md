@@ -9,6 +9,8 @@ academic research. It is not intended to be used to attack
 other systems. Project maintainers are not responsible or
 liable for misuse of the software. Use responsibly.
 
+Use of this DLL with pirated or unauthorized copies of the game is strictly prohibited. This tool is intended only for legitimate owners of the game for LAN or private use.
+
 ## Usage
 
 supports these versions:  
